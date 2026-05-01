@@ -1,5 +1,7 @@
 # The Odyssey
-**Maintainer:** Lillian Slaton | lslaton@cub.uca.edu
+Lillian Slaton | lslaton@cub.uca.edu
+
+## Wonklet
 
 Autonomous navigation project for the HomeR robot. The robot navigates from Room 159 to Room 171 in the Lewis Science Center, delivering a cup of coffee to the front desk.
 
@@ -17,11 +19,20 @@ The coffee cup holder consists of a trailer with a deep set cavity designed to h
 **Side View:**
 ![Cup Holder Side](images/cupHolder_side.png)
 
-**Mounting Bracket:**
+**Roof:**
 ![Mounting Bracket](images/cupHolder_bracket.png)
 
-**Arch Support:**
 ![Arch Support](images/cupHolder_arch.png)
+
+**Trailer Body** (holds the cup):
+- Width: 108mm
+- Depth: 127.5mm  
+- Height: 118mm
+
+**Trailer Roof** (secures the cup from the top):
+- Width: 116mm
+- Depth: 112.3mm
+- Height: 28.5mm
 
 Key design decisions:
 - Low center of gravity mount to reduce spilling during turns
@@ -41,11 +52,9 @@ Since I was working on my own robot this time, I had to create a base for my rob
 
 
 ### Hardware Installation Guide
-1. Print the cup holder using PLA filament
-2. Place the cup holder on the top platform of the robot
-3. Secure with M3 bolts through the four mounting holes
-4. Insert the 12 oz cup into the holder
-5. Verify the cup does not exceed the height of the LiDAR mounting posts
+1. Print the cup holder
+2. Drill holes into back corners and screw in castor wheels
+3. Attach "hook" of the trailer to drilled hole in the back of Wonklet Bot
 
 ---
 
