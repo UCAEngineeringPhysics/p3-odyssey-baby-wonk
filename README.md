@@ -8,12 +8,37 @@ Autonomous navigation project for the HomeR robot. The robot navigates from Room
 ## Coffee Transportation Solution
 
 ### Mechanical Design
-The coffee cup holder is a 3D-printed cylindrical cradle mounted on the top platform of the robot. It is designed to hold a standard 12 oz cup (diameter: 82mm at base, 95mm at top, height: 145mm).
+
+The coffee cup holder consists of a trailer with a deep set cavity designed to hold a standard 12 oz cup securely during robot navigation. It also has four vertical beams on all corners to secure a small roof. These designs were 3D printed, and castor wheels were screwed into the back two corners.
+
+**Front View:**
+![Cup Holder Front](images/cupHolder_front.png)
+
+**Side View:**
+![Cup Holder Side](images/cupHolder_side.png)
+
+**Mounting Bracket:**
+![Mounting Bracket](images/cupHolder_bracket.png)
+
+**Arch Support:**
+![Arch Support](images/cupHolder_arch.png)
 
 Key design decisions:
 - Low center of gravity mount to reduce spilling during turns
 - Friction-fit ring to secure cup without mechanical fasteners
-- Mounted centered over the robot wheelbase for balanced weight distribution
+- Vertical support beams in case of cup tipping, will catch cup before fall.
+
+### Robot Base Design
+Since I was working on my own robot this time, I had to create a base for my robot. Due to size constraints of my at home 3D printer, the base of my robot needed to be printed in 3 different sections. 
+**Base Piece 1:**
+![Base Top](images/base_top.png)
+
+**Base Piece 2:**
+![Base Side 1](images/base_side1.png)
+
+**Base Piece 3:**
+![Base Side 2](images/base_side2.png)
+
 
 ### Hardware Installation Guide
 1. Print the cup holder using PLA filament
