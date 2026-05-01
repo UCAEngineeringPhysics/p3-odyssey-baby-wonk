@@ -11,14 +11,31 @@ Autonomous navigation of the BabyWonk differential drive robot from Room 159 (Dr
 ---
 
 ## Coffee Delivery Solution
+## Bottom Support
+<img width="420" height="458" alt="Screenshot from 2026-05-01 09-46-13" src="https://github.com/user-attachments/assets/56d8e6b9-4553-4768-b505-b43748920c00" />
 
-<!-- TODO: Add sketch/photo of your cup holder design here -->
-<!-- TODO: Add critical dimensions -->
+## Top Support
+<img width="529" height="523" alt="Screenshot from 2026-05-01 09-51-12" src="https://github.com/user-attachments/assets/1af56505-1528-4b84-ab86-5460ccae20e9" />
 
-### Installation Guide
 
-<!-- TODO: Describe how to mount the cup holder onto the robot -->
-<!-- TODO: Include steps with photos if possible -->
+
+# Installation Guide
+## Steps for Installation
+1. 3d Print both Pieces accordingly
+   
+2. Once done, the underlaying connection pieces, match up with the "BASE" and "ROOF" respectively
+   
+3. I did not drill holes to allow for user customability, given this the user will need to decide the level of "secure" they want their cupholder to be.
+   
+4. Based on this level, at any point along the top or bottom mount holes should be drilled with 3mm screws placed through said holes and secured with a nut.
+
+# Example Pictures
+
+<img width="701" height="399" alt="Screenshot from 2026-05-01 10-28-37" src="https://github.com/user-attachments/assets/7bed753a-23bc-4459-b88d-1d24e7ef81a6" />
+<img width="455" height="409" alt="Screenshot from 2026-05-01 10-29-16" src="https://github.com/user-attachments/assets/b8de5129-66b6-422d-9193-b87c23343b54" />
+
+ 
+
 
 ---
 
