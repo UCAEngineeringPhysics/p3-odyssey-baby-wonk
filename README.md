@@ -1,9 +1,12 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/7KaPTW5f)
 # BabyWonk: The Odyssey
 
 Autonomous navigation of the BabyWonk differential drive robot from Room 159 (Dr. Chen's lab) to Room 171 (PAE Department office) in the Lewis Science Center, delivering a cup of coffee.
 
-**Maintainer:** mgarrett12 — mgarrett12@cub.uca.edu
+**Maintainer:** mgarrett1515 — mgarrett12@cub.uca.edu
+
+**Packages:**
+- [babywonk_bringup](babywonk_bringup/) — robot hardware bringup (motors, odometry, IMU, lidar)
+- [babywonk_navigation](babywonk_navigation/) — SLAM mapping, AMCL localization, Nav2, navigator node
 
 ---
 
@@ -115,13 +118,13 @@ The robot will autonomously navigate through the corridor route via waypoints an
 
 The map used for navigation is located in `~/maps/` on the robot's Raspberry Pi:
 - `odyssey_map_run6.pgm` — occupancy grid image
-- `odyssey_map_run6.yaml` — map metadata (resolution, origin)
 
+<img width="497" height="615" alt="odyssey_map_run6" src="https://github.com/user-attachments/assets/918a8335-2f59-4312-b6d6-4a3be6ff7949" />
+
+- `odyssey_map_run6.yaml` — map metadata (resolution, origin)
 ---
 
 ## Package Overview
-
-
 
 | Package | Runs On | Purpose |
 |---|---|---|
@@ -138,4 +141,5 @@ The map used for navigation is located in `~/maps/` on the robot's Raspberry Pi:
 | `amcl` | `/scan`, `/map` | `map→odom` TF |
 | `planner_server` | `/map`, `/scan` | `/plan` |
 | `controller_server` | `/plan`, `/scan` | `/cmd_vel` |
-| `navigator` | action feedback | `NavigateToPose` action goals |
+| `navigator` | action feedback | `NavigateToPose` action goals |<img width="497" height="615" alt="odyssey_map_run6" src="https://github.com/user-attachments/assets/6ae35449-80f3-4fba-9de8-51b8079b94d6" />
+
