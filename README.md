@@ -147,12 +147,43 @@ ros2 run wonklet navigate
 ---
 
 ## Navigation Node
-The `wonklet` package contains the autonomous navigation node using the ROS 2 action client to send a `NavigateToPose` goal to Nav2.
 
-Map files are in the `/maps` directory:
+The `wonklet` package contains the autonomous navigation node. It uses the **ROS 2 action client** to send a `NavigateToPose` goal to Nav2, which handles path planning and obstacle avoidance autonomously.
+
+### Navigation Approach
+1. The robot localizes itself on the saved map using slam_toolbox in localization mode
+2. The `wonklet` node sends a `NavigateToPose` action goal to Nav2 with the coordinates of Room 171 front desk
+3. Nav2 uses the NavFn global planner to compute a path and the Regulated Pure Pursuit controller to follow it
+4. The robot receives continuous feedback on distance remaining until goal is reached
+5. Upon arrival, the node logs "Coffee delivered!" and shuts down
+
+### Nav2 Configuration
+Configuration is located in `wonklet/config/nav2_params.yaml`. Key settings:
+- **Robot radius:** 0.15m
+- **Inflation radius:** 0.35m (keeps robot away from walls)
+- **Max linear velocity:** 0.15 m/s (slow for coffee delivery AND making sure wonklet doesn't flip foward)
+- **Goal tolerance:** 0.25m XY, 0.25 rad yaw
+
+### Map Files
+Located in `/maps` directory:
 - `P03.data`
 - `P03.posegraph`
 
+Map recorded in the Lewis Science Center hallway between Room 159 and Room 171.
+
+### Running the Navigation Node
+```bash
+# On Raspberry Pi:
+ros2 launch homer_bringup homer_launch.py
+
+# On Server:
+ros2 launch homer_navigation navigation.launch.py
+
+# On Raspberry Pi (new terminal):
+ros2 run wonklet navigate
+```
+
+The robot will autonomously navigate to Room 171 front desk and indicate completion in the terminal.
 ---
 
 ## License
