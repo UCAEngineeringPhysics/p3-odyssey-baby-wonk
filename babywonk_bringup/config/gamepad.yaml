@@ -1,0 +1,21 @@
+joy_node:
+  ros__parameters:
+    autorepeat_rate: 20.0  # keep publishing while joystick is held
+    deadzone: 0.15         # filter joystick drift
+
+teleop_twist_joy_node:
+  ros__parameters:
+    axis_linear:
+      x: 1                   # left stick up/down
+    scale_linear:
+      x: 0.25                # m/s normal
+    scale_linear_turbo:
+      x: 0.35                # m/s turbo
+
+    axis_angular:
+      yaw: 0                 # left stick left/right
+    scale_angular:
+      yaw: 1.0               # rad/s
+
+    enable_button: 4         # L1 — hold to drive
+    enable_turbo_button: 5   # L2 — hold for turbo
