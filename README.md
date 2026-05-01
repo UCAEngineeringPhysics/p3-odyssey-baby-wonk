@@ -184,6 +184,33 @@ ros2 run wonklet navigate
 ```
 
 The robot will autonomously navigate to Room 171 front desk and indicate completion in the terminal.
+
+---
+
+## Demo Reflection
+
+### What Happened
+During the demonstration, the robot was unable to complete the autonomous navigation run. Several technical issues prevented a successful attempt:
+
+1. **Motor driver issues** — The day before the demonstration, the DRV8874 motor driver carriers on the Thalamus PCB were not consistently delivering power to the motors. Thanks to Dr. Zhang, I was able to use a working Thalamus board. During the demo, while individual motor tests worked in the MicroPython REPL, the full navigation stack could not reliably spin the wheels.This led to an extended amount of time spent trying to fix.
+
+2. **EKF/odometry failure** — The Extended Kalman Filter node was not publishing the `odom` → `base_link` transform, which prevented slam_toolbox from initializing the map frame. This blocked SLAM and Nav2 from functioning.
+
+3. **Network/middleware issues** — ROS 2 multicast was blocked on the demonstration network (mobile hotspot). While we resolved this using CycloneDDS unicast configuration, the setup required manual intervention each session which added instability.
+
+4. **Serial port conflicts** — Multiple processes competing for `/dev/ttyACM0` caused the pico_interface node to crash silently, preventing odometry data from being published.
+
+### What I Would Fix Next Time
+
+1. **Test hardware earlier** — The motor driver issue should have been caught and resolved days before the demo. Unit testing each component (base_motor, encoded_motor, etc.) earlier would have identified wiring problems sooner.
+
+2. **Fix the EKF configuration** — The `ekf.yaml` topic names were missing leading slashes (`homer/odom` instead of `/homer/odom`). This simple fix took too long to diagnose and should have been caught during initial setup.
+
+3. **Use a dedicated router** — A dedicated WiFi router instead of a mobile hotspot would eliminate multicast blocking issues and provide a stable, consistent network for ROS 2 communication. Although there were issues with the router during demo time, moving from hotspot to wifi wasn't the best use of time.
+
+4. **Add a startup script** — A single shell script that kills conflicting processes, sources the environment, and launches all nodes in the correct order would prevent the serial port conflict issues.
+
+5. **Test the full pipeline end-to-end earlier** — The individual components (Pico, LiDAR, EKF, SLAM) were tested separately but never as a complete system until too late. Earlier full-system integration testing would have revealed these issues with time to fix them.
 ---
 
 ## License
